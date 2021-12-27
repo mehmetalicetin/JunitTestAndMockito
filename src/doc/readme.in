@@ -1,0 +1,50 @@
+What is Unit Testing ?
+    * Unit Testing or Component Testing is a software testing technique in which single component of
+      software is tested.
+    * The objective here is to pick each unit and verify it.
+
+What is Mocking ?
+    * Mocking refers to the development of objects which are a mock or clone of real object.
+    * In the technique mock objects are used instead of real objects for testing.
+    * Mock objects give a particular output for each particular input
+    * Mockito is the most popular framework used for Mocking.
+
+What is Mockito ?
+    * Mockito is a Java Based Framework used for unit testing of java applications.
+    * This mocking framework helps in development of testable applications.
+    * Java Reflection Api is used internally to generate mock objects.
+    * Mockito is used to simplify the test development by mocking external dependencies and using them in the code.
+
+When to use Mockito ?
+    *When a component is to be tested, but that component depends on some other component, which is under development.
+    *When the real components perform slowly, than mock objects are used to perform testing.
+
+
+
+5.1. Using when().thenReturn() and when().thenThrow():
+        Mocks can return different values depending on arguments passed into a method.
+
+5.2. doReturn when and doThrow when:
+        The doReturn(…​).when(…​) method configuration can be used to configure the reply of a mocked method call.
+        This is similar to when(…​.).thenReturn(…​.).
+        As when(…​.).thenReturn(…​.) is easier to read, you should prefer using it.
+        But doReturn can be useful if you are using spies.
+
+6. Wrapping Java objects with Spy
+    @Spy or the spy() method can be used to wrap a real object. Every call, unless specified otherwise, is delegated to the object.
+
+6.1. Verify the calls on the mock objects
+      Mockito keeps track of all the method calls and their parameters to the mock object.
+      You can use the verify() method on the mock object to verify that the specified conditions are met
+
+7. Using @InjectMocks for dependency injection via Mockito
+     You also have the @InjectMocks annotation which tries to do constructor, method or field dependency injection of mock objects in to other type.
+     It does not require @Inject to be present and also does not try to be a full features dependency injection framework but is helpful to wire up objects to be tested.
+
+8. Capturing the arguments
+    The ArgumentCaptor class allows to access the arguments of method calls during the verification.
+    This allows to capture these arguments of method calls and to use them for tests.
+
+9. Using Answers for complex mocks
+    thenReturn returns a predefined value every time.
+    With an Answer object you can calculate a response based on the arguments given to your stubbed method.
